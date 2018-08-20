@@ -1,4 +1,5 @@
 # 基于jq和css3多列的长文本自动分页
+(Chrome手机模式下测试）
 
 ### usage
 
@@ -13,4 +14,4 @@ options支持配置项：
 - fadeSpeed 翻页过渡时间
 - fontSize 文本字体大小
 - lineHeight 行间距
-- onPageChange 翻页时触发的函数
+- onPageChange 左滑，右滑翻页时触发的函数
