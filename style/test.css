@@ -1,0 +1,12 @@
+body{
+  margin:0;
+  padding:0
+}
+
+#content {
+  word-break:break-all;
+}
+
+#content p {
+  text-indent:2em;
+}
