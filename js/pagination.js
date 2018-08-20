@@ -7,7 +7,14 @@
         fadeSpeed: 400,
         fontSize: 20,
         lineHeight: 25,
-        onPageChange: function(cpage, totalPage) { console.log(cpage, totalPage) }
+        onPageChange: function(cpage, totalPage, prePage, nextPage) {
+          console.log(
+            '当前页:', cpage,
+            '\r\n总页数:', totalPage,
+            '\r\n前一页:', prePage,
+            '\r\n后一页:', nextPage,
+          );
+        }
       };
       var options = $.extend(defaults, options);
 
@@ -43,14 +50,16 @@
       };
 
       showPage = function (page) {
+        var nextPage = page;
+        var prePage = page - 1;
         page = page > 1 ? page : 1;
         page = page >= lastPage ? lastPage : page;
         cPage = page;
 
+        options.onPageChange(cPage, lastPage, prePage, nextPage);
         $content.animate({
           scrollLeft: (page - 1) * (options.width + gap)
         }, options.fadeSpeed);
-        options.onPageChange(cPage, lastPage);
       };
 
       setContent();
